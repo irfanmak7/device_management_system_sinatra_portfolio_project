@@ -6,4 +6,8 @@ class ApplicationController < Sinatra::Base
         enable :sessions
         set :session_secret, "device_management_system_app"
     end
+
+    get '/' do
+
+    end
 end
