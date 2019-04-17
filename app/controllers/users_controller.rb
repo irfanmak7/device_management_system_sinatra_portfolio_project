@@ -26,5 +26,8 @@ class UsersController < ApplicationController
             redirect '/devices'
         end
     end
-    
+
+    post '/login' do
+
+    end
 end
