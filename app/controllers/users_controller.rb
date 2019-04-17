@@ -38,6 +38,10 @@ class UsersController < ApplicationController
     end
 
     get '/logout' do
-
+        if logged_in?
+            logout!
+        else
+            redirect to '/'
+        end
     end
 end
