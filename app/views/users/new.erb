@@ -8,14 +8,24 @@
 
     <body>
         <div id="header">
-        <h1>TIMS</h1>
-        <div id="nav">
-            <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/signup">Signup</a></li>
-            <li><a href="/login">Login</a></li>
-            </ul>
+        <h1>DMS</h1>
+            <div id="nav">
+                <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/signup">Signup</a></li>
+                <li><a href="/login">Login</a></li>
+                </ul>
+            </div>
         </div>
+
+        <div id="content">
+            <h2>Sign Up</h2>
+            <form action="/signup" method="POST">
+                <p><input type="text" name="name" placeholder="Name:"></p>
+                <p><input type="email" name="email" placeholder="Email:"></p>
+                <p><input type="text" name="password" placeholder="Password:"></p>
+                <p><input class="btn btn-primary" type="submit"> or <a href="/login">Login</a></p>
+            </form>
         </div>
 
     </body>
