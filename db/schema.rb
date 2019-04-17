@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_17_030530) do
+ActiveRecord::Schema.define(version: 2019_04_17_031412) do
+
+  create_table "devices", force: :cascade do |t|
+    t.string "name"
+    t.string "serial_number"
+    t.string "color"
+    t.integer "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
