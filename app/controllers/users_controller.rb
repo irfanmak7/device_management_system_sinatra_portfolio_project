@@ -15,7 +15,7 @@ class UsersController < ApplicationController
             @user = User.new(:name => params[:name], :email => params[:email],:password => params[:password])
             @user.save
             session[:user_id] = @user.id
-            redirect '/items'
+            redirect '/devices'
         end
     end
 end
