@@ -6,5 +6,6 @@ end
 
 use Rack::MethodOverride
 
-
+use DevicesController
+use UsersController
 run ApplicationController
