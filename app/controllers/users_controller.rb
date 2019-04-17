@@ -18,4 +18,8 @@ class UsersController < ApplicationController
             redirect '/devices'
         end
     end
+
+    get '/login' do
+
+    end
 end
