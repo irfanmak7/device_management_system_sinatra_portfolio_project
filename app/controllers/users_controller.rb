@@ -7,4 +7,8 @@ class UsersController < ApplicationController
             redirect '/devices'
         end
     end
+
+    post '/signup' do
+
+    end
 end
