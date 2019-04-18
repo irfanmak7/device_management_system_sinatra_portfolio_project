@@ -14,7 +14,7 @@ class DevicesController < ApplicationController
             if params[:name] == "" || params[:serial_number] == "" || params[:color] == ""
                 redirect to "/devices/new"
             else
-                @device = current_user.devices.build(name: params[:name], serial_number: params[:serial_number], color: params[:color])
+                @device = current_user.devices.build(params)
                 if @device.save
                     redirect to "/devices/#{@device.id}"
                 else
