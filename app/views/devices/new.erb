@@ -8,7 +8,7 @@
 
     <body>
         <div id="header">
-            <h1>TIMS</h1>
+            <h1>DMS</h1>
             <div id="nav">
                 <ul>
                 <li><a href="/">Home</a></li>
@@ -16,6 +16,31 @@
                 <li><a href="/login">Login</a></li>
                 </ul>
             </div>
+        </div>
+
+        <div id="content">
+            <h3> Here's a list of all your devices: </h3>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Edit</th>
+                </tr>
+                <% @devices.each do |device| %>
+                    <tr>
+                        <td>
+                            <a href="/devices/<%= device.id %>">
+                                <%= device.name %>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/devices/<%=device.id%>/edit">Edit</a>
+                        </td>
+                    </tr>
+                <% end %>
+            </table> 
+        
+            <p><a href="/devices/new">Add New Device</a></p>
+            <p><a href="/logout">Logout</a></p>
         </div>
     </body>
 </html>
