@@ -9,8 +9,12 @@ To run this app, open up terminal and enter:
 After it is cloned, change into the tims_sinatra_portfolio_project directory. From the directory, enter this in terminal:
 
     bundle install
+
+After the all the gems are installed, enter this in terminal:
+
+    rake db:migrate
     
-After it installs all the gems, enter this terminal:
+After the migration, enter this terminal:
 
     shotgun
     
