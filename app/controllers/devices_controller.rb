@@ -34,4 +34,8 @@ class DevicesController < ApplicationController
         end
     end
 
+    get '/devices/:id' do
+
+    end
+
 end
