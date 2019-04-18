@@ -17,5 +17,17 @@
                 </ul>
             </div>
         </div>
+
+        <div id="content">
+            <h2>Device Information</h2>
+            <p>Name: <%= @device.name %></p>
+            <p>Serial Number: <%= @device.serial_number %></p>
+            <p>Color: <%= @device.color %></p>
+            <form action="/devices/<%= @device.id %>/delete" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <p><input class="btn btn-primary btn-sm"   type="submit" value="Delete"></p>
+            </form>
+            <a href="/devices">Main List</a>
+        </div>
     </body>
 </html>
