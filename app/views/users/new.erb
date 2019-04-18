@@ -38,6 +38,10 @@
                 width: 40%;
                 padding: 12px 20px;
                 box-sizing: border-box;}
+            input[type=password] {
+                width: 40%;
+                padding: 12px 20px;
+                box-sizing: border-box;}
         </style>
     </head>
 
@@ -58,7 +62,7 @@
             <form action="/signup" method="POST">
                 <p><input type="text" name="name" placeholder="Name:"></p>
                 <p><input type="email" name="email" placeholder="Email:"></p>
-                <p><input type="text" name="password" placeholder="Password:"></p>
+                <p><input type="password" name="password" placeholder="Password:"></p>
                 <p><input class="btn btn-primary" type="submit"> or <a href="/login">Login</a></p>
             </form>
         </div>
