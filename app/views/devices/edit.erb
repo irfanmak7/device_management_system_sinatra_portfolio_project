@@ -18,5 +18,19 @@
             </div>
         </div>
 
+        <div id="content">
+            <h3>Edit <%= @item.name %></h3>
+            <form action="/items/<%=@item.id %>" method="POST">
+                <input type="hidden" name="_method" value="patch">
+                <label> Name: </label>
+                <p><input type="text" name="name" value="<%=@item.name %>"> </p>
+
+                <label> Serial Number: </label>
+                <p><input type="text" name="serial_number" value="<%=@item.serial_number %>"> </p>
+
+                <p><input type="submit"></p>
+                <p><a href="/items"> Cancel</a></p>
+            </form>
+        </div>
     </body>
 </html>   
