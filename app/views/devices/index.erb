@@ -59,13 +59,13 @@
         </div>
 
         <div id="content">
-            <h3> Here's a list of all your tech devices: </h3>
+            <h3> Here's a list of all your devices: </h3>
             <table>
                 <tr>
                     <th>Name</th>
                     <th>Edit</th>
                 </tr>
-                <% @devices.each do |item| %>
+                <% @devices.each do |device| %>
                     <tr>
                         <td>
                             <a href="/devices/<%= device.id %>">
@@ -79,7 +79,7 @@
                 <% end %>
             </table> 
         
-            <p><a href="/devices/new">Add New Item</a></p>
+            <p><a href="/devices/new">Add New Device</a></p>
             <p><a href="/logout">Logout</a></p>
         </div>
     </body>
