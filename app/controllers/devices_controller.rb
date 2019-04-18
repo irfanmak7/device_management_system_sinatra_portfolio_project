@@ -44,7 +44,16 @@ class DevicesController < ApplicationController
     end
 
     get '/devices/:id/edit' do
-
+        if logged_in?
+            @device = Device.find_by_id(params[:id])
+            if @device && @device.user == current_user
+              erb :'devices/edit'
+            else
+              redirect to '/devices'
+            end
+        else
+            redirect to '/login'
+        end
     end
 
 end
