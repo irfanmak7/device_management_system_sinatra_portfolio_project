@@ -9,4 +9,8 @@ class DevicesController < ApplicationController
         end
     end
 
+    post '/devices' do
+
+    end
+
 end
