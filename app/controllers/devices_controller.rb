@@ -26,4 +26,8 @@ class DevicesController < ApplicationController
         end
     end
 
+    get '/devices/new' do
+
+    end
+
 end
