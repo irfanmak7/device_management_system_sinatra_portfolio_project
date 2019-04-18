@@ -12,7 +12,7 @@ class UsersController < ApplicationController
         if params[:email] == "" || params[:password] == ""
             redirect to '/signup'
         else
-            @user = User.new(:name => params[:name], :email => params[:email],:password => params[:password])
+            @user = User.new(params)
             @user.save
             session[:user_id] = @user.id
             redirect '/devices'
