@@ -78,7 +78,15 @@ class DevicesController < ApplicationController
     end
 
     delete '/devices/:id/delete' do
-
+        if logged_in?
+            @device = Device.find_by_id(params[:id])
+            if @device && @device.user == current_user
+              @device.delete
+            end
+            redirect to '/devices'
+        else
+            redirect to '/login'
+        end
     end
 
 end
