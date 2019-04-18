@@ -1,9 +1,41 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>TIMS: Tech Inventory Management System</title>
+        <title>Device Management System</title>
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
-
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background: -webkit-linear-gradient(top, #56ccf2, #2f80ed) no-repeat 50% 50% fixed;
+                background-size: cover;
+                font-family: Oswald, sans-serif;
+                color: #efefef;}
+            #nav {
+                background-color: #687587;
+                height: 35px;
+                text-align: center;}
+            li {
+                display: inline;
+                padding: 50px;}
+            #header {
+                text-align: center;}
+            #content {
+                text-align: center;
+                padding: 20px;}
+            a:link {
+                color: black;
+                text-decoration: none;}
+            a:visited {
+                color: black;
+                text-decoration: none;}
+            a:hover {
+                color: orange;}
+            input[type=text]{
+                width: 40%;
+                padding: 12px 20px;
+                box-sizing: border-box;}
+        </style>
     </head>
 
     <body>
@@ -19,17 +51,20 @@
         </div>
 
         <div id="content">
-            <h3>Edit <%= @item.name %></h3>
-            <form action="/items/<%=@item.id %>" method="POST">
+            <h3>Edit <%= @device.name %></h3>
+            <form action="/devices/<%=@device.id %>" method="POST">
                 <input type="hidden" name="_method" value="patch">
                 <label> Name: </label>
-                <p><input type="text" name="name" value="<%=@item.name %>"> </p>
+                <p><input type="text" name="name" value="<%=@device.name %>"> </p>
 
                 <label> Serial Number: </label>
-                <p><input type="text" name="serial_number" value="<%=@item.serial_number %>"> </p>
+                <p><input type="text" name="serial_number" value="<%=@device.serial_number %>"> </p>
+
+                <label> Color: </label>
+                <p><input type="text" name="color" value="<%=@device.color %>"> </p>
 
                 <p><input type="submit"></p>
-                <p><a href="/items"> Cancel</a></p>
+                <p><a href="/devices"> Cancel</a></p>
             </form>
         </div>
     </body>
