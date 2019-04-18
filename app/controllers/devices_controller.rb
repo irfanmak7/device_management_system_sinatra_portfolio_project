@@ -77,4 +77,8 @@ class DevicesController < ApplicationController
         end
     end
 
+    delete '/devices/:id/delete' do
+
+    end
+
 end
