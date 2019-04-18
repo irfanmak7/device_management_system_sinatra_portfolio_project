@@ -56,4 +56,8 @@ class DevicesController < ApplicationController
         end
     end
 
+    patch '/devices/:id' do
+
+    end
+
 end
