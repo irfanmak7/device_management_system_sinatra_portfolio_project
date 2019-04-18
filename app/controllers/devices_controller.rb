@@ -27,7 +27,11 @@ class DevicesController < ApplicationController
     end
 
     get '/devices/new' do
-
+        if logged_in?
+            erb :'devices/new'
+        else
+            redirect to '/login'
+        end
     end
 
 end
