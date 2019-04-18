@@ -57,7 +57,24 @@ class DevicesController < ApplicationController
     end
 
     patch '/devices/:id' do
-
+        if logged_in?
+            if params[:name] == "" || params[:serial_number] == "" || params[:color] == ""
+              redirect to "/devices/#{params[:id]}/edit"
+            else
+              @device = Device.find_by_id(params[:id])
+              if @device && @device.user == current_user
+                if @device.update(name: params[:name], serial_number: params[:serial_number], color: params[:color])
+                  redirect to "/devices/#{@device.id}"
+                else 
+                  redirect to "/devices/#{@device.id}/edit"
+                end
+              else 
+                redirect to '/devices'
+              end
+            end
+        else 
+            redirect to '/login'
+        end
     end
 
 end
