@@ -10,19 +10,11 @@ class DevicesController < ApplicationController
     end
 
     post '/devices' do
-        if logged_in?
-            if params[:name] == "" || params[:serial_number] == "" || params[:color] == ""
-                redirect to "/devices/new"
-            else
-                @device = current_user.devices.build(params)
-                if @device.save
-                    redirect to "/devices/#{@device.id}"
-                else
-                    redirect to "/devices/new"
-                end
-            end
+        @device = current_user.devices.build(params)
+        if @device.save
+            redirect to "/devices/#{@device.id}"
         else
-            redirect to '/login'
+            redirect to "/devices/new"
         end
     end
 
